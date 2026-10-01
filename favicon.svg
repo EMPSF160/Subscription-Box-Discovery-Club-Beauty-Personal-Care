@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#241923"/>
+      <stop offset="100%" stop-color="#160e15"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E7D5B5"/>
+      <stop offset="50%" stop-color="#DFCA9B"/>
+      <stop offset="100%" stop-color="#C9A66B"/>
+    </linearGradient>
+    <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7EAEF"/>
+      <stop offset="100%" stop-color="#D89BA8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Rounded Luxury Badge -->
+  <rect width="64" height="64" rx="18" fill="url(#glowGrad)"/>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-opacity="0.6"/>
+  
+  <!-- Stylized Luxury "G" Monogram -->
+  <path d="M38 21.5C35.5 19.5 32 18.5 28 18.5C20.5 18.5 15 24 15 32C15 40 20.5 45.5 28.5 45.5C36 45.5 41 40.5 41.5 33.5H28V28.5H46.5C47 38.5 40 50 28.5 50C17.5 50 10 42 10 32C10 21.8 17.8 14 28.5 14C34.2 14 39 16 42.5 19.5L38 21.5Z" fill="url(#roseGrad)"/>
+  
+  <!-- Signature 4-Pointed Sparkle Star -->
+  <path d="M49 13C49 18 45 22 40 22C45 22 49 26 49 31C49 26 53 22 58 22C53 22 49 18 49 13Z" fill="url(#goldGrad)"/>
+  <circle cx="49" cy="22" r="1.5" fill="#FFFFFF"/>
+</svg>

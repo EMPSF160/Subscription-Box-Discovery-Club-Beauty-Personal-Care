@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Concierge & Help Center | GLOWBOX</title>
+  <meta name="description" content="Reach the GLOWBOX Beauty Concierge team, track your upcoming monthly box, or browse our subscriber FAQs.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="glow-topbar text-center">
+    <span>✨ Need personal formula advice? Our beauty concierges are online 24/7.</span>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="navbar navbar-expand-xl glow-nav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-logo-text">GLOWBOX<span class="brand-sparkle">✦</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#glowNavbar">
+        <i class="fa-solid fa-bars-staggered fs-4 text-plum"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="glowNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="boxes.html">Explore Boxes</a></li>
+          <li class="nav-item"><a class="nav-link" href="quiz.html">Beauty Quiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="how-it-works.html">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="journal.html">Journal</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+          <a href="login.html" class="btn btn-sm btn-glow-outline px-3">Sign In</a>
+          <a href="dashboard.html" class="btn btn-sm btn-glow-plum px-3">My Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="py-5 bg-white border-bottom text-center">
+    <div class="container py-4">
+      <span class="section-tag"><i class="fa-solid fa-headset"></i> Dedicated Concierge</span>
+      <h1 class="font-serif text-plum fw-bold mb-3">How Can We Assist You Today?</h1>
+      <p class="lead text-muted max-w-700 mx-auto">
+        Have questions regarding monthly box tracking, skin sensitivities, or subscription preferences? Our beauty concierges are here to assist.
+      </p>
+    </div>
+  </header>
+
+  <!-- Contact & Tracking Widgets -->
+  <main class="py-5">
+    <div class="container">
+      
+      <!-- Instant Box Tracker Widget -->
+      <div class="p-4 bg-plum text-white rounded-4 shadow-lg mb-5" data-aos="fade-up">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-5">
+            <span class="section-tag dark mb-2"><i class="fa-solid fa-truck-fast"></i> Instant Tracker</span>
+            <h3 class="font-serif text-white fw-bold mb-2">Track Your Upcoming Box</h3>
+            <p class="small opacity-80 m-0">Enter your GLOWBOX tracking or Order ID (e.g. GLOW-US-9847291) to view carrier status.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="input-group input-group-lg">
+              <input type="text" id="trackInput" class="form-control" placeholder="Enter Order ID or Email..." value="GLOW-US-9847291">
+              <button class="btn btn-glow-champagne px-4" onclick="simulateBoxTrack()">
+                <i class="fa-solid fa-location-dot me-1"></i> Track Box
+              </button>
+            </div>
+            <div id="trackResultBox" class="mt-3 p-3 rounded-3 bg-white bg-opacity-10 d-none">
+              <small class="text-champagne fw-bold d-block mb-1"><i class="fa-solid fa-circle-check"></i> Status: Dispatched via FedEx Priority</small>
+              <span class="small text-white">Estimated Delivery: <strong>November 8, 2026</strong> • On Time</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form & Info Cards -->
+      <div class="row g-5">
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="p-4 p-md-5 bg-white rounded-4 border shadow-sm">
+            <h3 class="font-serif text-plum fw-bold mb-2">Send a Message to Concierge</h3>
+            <p class="small text-muted mb-4">We reply to all inquiries within 2 hours during active business hours.</p>
+
+            <form onsubmit="handleContactSubmit(event)">
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Your Name</label>
+                  <input type="text" class="form-control" required placeholder="Sophia Montgomery">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Email Address</label>
+                  <input type="email" class="form-control" required placeholder="sophia@example.com">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Inquiry Topic</label>
+                  <select class="form-select">
+                    <option>Subscription Customization</option>
+                    <option>Shipping & Tracking</option>
+                    <option>Formula Ingredient Questions</option>
+                    <option>Brand Partnership</option>
+                    <option>Press & Media</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Subscription Order # (Optional)</label>
+                  <input type="text" class="form-control" placeholder="e.g. ORD-98214">
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-bold">Message</label>
+                  <textarea class="form-control" rows="4" required placeholder="How can our aesthetic team help you?"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-glow-plum btn-lg w-100">
+                <i class="fa-regular fa-paper-plane me-2"></i> Submit Inquiry
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-5" data-aos="fade-left">
+          <div class="d-flex flex-column gap-3 h-100">
+            <div class="p-4 bg-white rounded-4 border shadow-sm">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="stat-icon-wrap bg-rose-soft text-rose"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <h6 class="font-serif text-plum fw-bold m-0">VIP Concierge Email</h6>
+                  <small class="text-muted">concierge@glowbox.luxury</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 bg-white rounded-4 border shadow-sm">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="stat-icon-wrap bg-ivory text-plum"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <h6 class="font-serif text-plum fw-bold m-0">Member Hotline</h6>
+                  <small class="text-muted">+1 (800) 592-GLOW (Mon - Fri)</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 bg-white rounded-4 border shadow-sm">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="stat-icon-wrap bg-rose-soft text-champagne"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <h6 class="font-serif text-plum fw-bold m-0">Atelier Headquarters</h6>
+                  <small class="text-muted">450 Sutter Street, Suite 1200, San Francisco, CA 94108</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media Hub Card -->
+            <div class="p-4 bg-white rounded-4 border shadow-sm">
+              <h6 class="font-serif text-plum fw-bold mb-2">Connect Across Social Channels</h6>
+              <p class="small text-muted mb-3">Join 240,000+ beauty lovers on our official social handles:</p>
+              <div class="footer-social-strip mb-2">
+                <a href="https://www.instagram.com/glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-insta" title="Instagram @glowboxbeauty"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-fb" title="Facebook @glowboxbeauty"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/glowboxluxury" target="_blank" rel="noopener noreferrer" class="social-circle soc-linkedin" title="LinkedIn @glowboxluxury"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-x" title="X / Twitter @glowboxbeauty"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/@glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-yt" title="YouTube GLOWBOX Masterclasses"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.pinterest.com/glowboxluxury" target="_blank" rel="noopener noreferrer" class="social-circle soc-pin" title="Pinterest @glowboxluxury"><i class="fa-brands fa-pinterest-p"></i></a>
+                <a href="https://www.threads.net/@glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-threads" title="Threads @glowbox"><i class="fa-brands fa-threads"></i></a>
+              </div>
+              <small class="text-muted d-block mt-2"><i class="fa-solid fa-hashtag text-rose me-1"></i> Tag <strong>#GlowboxUnboxing</strong> to be featured.</small>
+            </div>
+
+            <div class="p-4 bg-plum text-white rounded-4 shadow-sm mt-auto">
+              <h5 class="font-serif text-white fw-bold mb-2">Need Immediate Help?</h5>
+              <p class="small text-white opacity-80 mb-3">Live chat is available right now for active subscribers.</p>
+              <button class="btn btn-glow-champagne btn-sm w-100" onclick="showGlowToast('Live Concierge', 'Connecting with Beauty Consultant Maya...', 'info')">
+                <i class="fa-solid fa-comments me-1"></i> Start Live Chat
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Google Map Section -->
+      <div class="mt-5 pt-4" data-aos="fade-up">
+        <div class="p-4 p-md-5 bg-white rounded-4 border shadow-sm">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+            <div>
+              <span class="section-tag mb-1"><i class="fa-solid fa-map-location-dot"></i> Visit Us</span>
+              <h3 class="font-serif text-plum fw-bold m-0">GLOWBOX San Francisco Flagship Atelier</h3>
+              <p class="text-muted small m-0 mt-1">450 Sutter Street, Suite 1200, San Francisco, California</p>
+            </div>
+            <div class="d-flex gap-2">
+              <a href="https://maps.google.com/?q=450+Sutter+St+San+Francisco+CA" target="_blank" class="btn btn-sm btn-glow-outline">
+                <i class="fa-solid fa-diamond-turn-right me-1"></i> Get Directions
+              </a>
+              <button class="btn btn-sm btn-glow-plum" onclick="showGlowToast('Concierge Booking', 'Atelier skincare consultation booked.', 'success')">
+                Book Skin Consultation
+              </button>
+            </div>
+          </div>
+
+          <!-- Embedded Map -->
+          <div class="rounded-4 overflow-hidden shadow-sm position-relative" style="height: 360px; background: #e5e3df;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.119438902521!2d-122.40939522339591!3d37.78957867198226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808930a08e1b%3A0x6b8f3a3d537d8e8b!2s450%20Sutter%20St%2C%20San%20Francisco%2C%20CA%2094108!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+              width="100%" 
+              height="100%" 
+              style="border:0; filter: grayscale(10%) contrast(105%);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Luxury Footer -->
+  <footer class="glow-footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5 mb-5">
+        <div class="col-lg-4">
+          <a href="index.html" class="d-inline-block mb-3">
+            <span class="brand-logo-text text-white">GLOWBOX<span class="brand-sparkle">✦</span></span>
+          </a>
+          <p class="small text-white opacity-75 mb-4">
+            GLOWBOX is the premier luxury beauty and skincare discovery platform. Every month, we curate bespoke high-performance formulations to elevate your beauty ritual.
+          </p>
+          <div class="footer-social-strip mb-3">
+            <a href="https://www.instagram.com/glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-insta" title="Instagram @glowboxbeauty"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-fb" title="Facebook @glowboxbeauty"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/glowboxluxury" target="_blank" rel="noopener noreferrer" class="social-circle soc-linkedin" title="LinkedIn @glowboxluxury"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-x" title="X / Twitter @glowboxbeauty"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-yt" title="YouTube GLOWBOX Masterclasses"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.pinterest.com/glowboxluxury" target="_blank" rel="noopener noreferrer" class="social-circle soc-pin" title="Pinterest @glowboxluxury"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://www.threads.net/@glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-threads" title="Threads @glowbox"><i class="fa-brands fa-threads"></i></a>
+          </div>
+          <div class="d-flex align-items-center gap-2 small text-white opacity-75">
+            <i class="fa-solid fa-camera-retro text-rose"></i>
+            <span>Tag <strong>#GlowboxUnboxing</strong> on Instagram</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Discovery</h6>
+          <ul class="list-unstyled">
+            <li><a href="boxes.html" class="footer-link">Explore Boxes</a></li>
+            <li><a href="quiz.html" class="footer-link">Beauty Quiz</a></li>
+            <li><a href="how-it-works.html" class="footer-link">How It Works</a></li>
+            <li><a href="box-detail.html?id=box-velvet-radiance" class="footer-link">Velvet Radiance Edit</a></li>
+            <li><a href="box-detail.html?id=box-golden-luxe" class="footer-link">VIP Golden Club</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">The Brand</h6>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link">Our Story</a></li>
+            <li><a href="journal.html" class="footer-link">Beauty Journal</a></li>
+            <li><a href="about.html" class="footer-link">Clean Pledge</a></li>
+            <li><a href="contact.html" class="footer-link">Brand Partnerships</a></li>
+            <li><a href="contact.html" class="footer-link">Press & Media</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Support</h6>
+          <ul class="list-unstyled">
+            <li><a href="contact.html" class="footer-link">Help Center & FAQ</a></li>
+            <li><a href="dashboard.html" class="footer-link">Customer Dashboard</a></li>
+            <li><a href="dashboard.html#subscription" class="footer-link">Manage Subscription</a></li>
+            <li><a href="admin.html" class="footer-link">Admin Portal</a></li>
+            <li><a href="login.html" class="footer-link">Sign In / Register</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Join The Glow Club</h6>
+          <p class="small text-white opacity-75 mb-3">Subscribe for secret member drops and skincare masterclasses.</p>
+          <form onsubmit="event.preventDefault(); showGlowToast('Subscribed! ✨', 'You are on the VIP Beauty Insider list.', 'success');">
+            <div class="input-group input-group-sm mb-2">
+              <input type="email" class="form-control" placeholder="Your email..." required>
+              <button class="btn btn-glow-champagne" type="submit">Join</button>
+            </div>
+            <small class="text-white opacity-50" style="font-size: 0.72rem;">No spam. Unsubscribe anytime.</small>
+          </form>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-4 border-top border-secondary border-opacity-25 small opacity-75">
+        <p class="m-0">© 2026 GLOWBOX Inc. Discover. Unbox. Glow. All rights reserved.</p>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="#" class="text-white opacity-75">Privacy Policy</a>
+          <a href="#" class="text-white opacity-75">Terms of Service</a>
+          <a href="#" class="text-white opacity-75">Shipping & Returns</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    function simulateBoxTrack() {
+      const resultBox = document.getElementById("trackResultBox");
+      resultBox.classList.remove("d-none");
+      showGlowToast("Tracking Updated", "FedEx status verified for GLOW-US-9847291.", "success");
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      showGlowToast("Message Dispatched ✨", "Thank you! A beauty concierge will respond within 2 hours.", "success");
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>

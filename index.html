@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLOWBOX — Discover. Unbox. Glow. | Luxury Beauty Subscription</title>
+  <meta name="description" content="Discover 5 curated deluxe and full-size luxury beauty essentials delivered monthly. Take the 'Your Beauty Match' quiz for personalized skincare and makeup curations.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="glow-topbar text-center">
+    <span>✨ <strong>AUTUMN UNBOXING SALE:</strong> Get $10 OFF your first luxury box with code <span class="badge bg-champagne text-plum fw-bold">GLOWVIP20</span> + Free VIP Shipping. <a href="quiz.html" class="ms-1">Take the Beauty Quiz &rarr;</a></span>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="navbar navbar-expand-xl glow-nav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-logo-text">
+          GLOWBOX<span class="brand-sparkle">✦</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#glowNavbar">
+        <i class="fa-solid fa-bars-staggered fs-4 text-plum"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="glowNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="boxes.html">Explore Boxes</a></li>
+          <li class="nav-item"><a class="nav-link" href="quiz.html">Beauty Quiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="how-it-works.html">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="journal.html">Journal</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+          <a href="login.html" class="btn btn-sm btn-glow-outline px-3">
+            <i class="fa-regular fa-user me-1"></i> Sign In
+          </a>
+          <a href="dashboard.html" class="btn btn-sm btn-glow-plum px-3">
+            <i class="fa-solid fa-sparkles me-1"></i> My Dashboard
+          </a>
+          <a href="admin.html" class="btn btn-sm btn-outline-dark px-2" title="Switch to Admin Portal">
+            <i class="fa-solid fa-gear"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-wrapper text-center">
+    <div class="hero-glow-blob blob-1"></div>
+    <div class="hero-glow-blob blob-2"></div>
+    <div class="container">
+      <div class="max-w-900 mx-auto text-center mb-5" data-aos="fade-up">
+        <div class="section-tag mx-auto">
+          <i class="fa-solid fa-crown text-champagne"></i> #1 Luxury Beauty Discovery Club
+        </div>
+        <h1 class="mb-3 text-center hero-title-main">
+          Discover. Unbox. <br>
+          <span class="hero-title-highlight">Bespoke Radiance</span> Delivered.
+        </h1>
+        <p class="lead mb-4 text-muted mx-auto section-intro-text">
+          Unveil five hand-curated, prestige beauty & skincare essentials tailored precisely to your cellular skin profile. Over <strong>$195+</strong> retail value inside every monthly box from just <strong>$28/mo</strong>.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+          <a href="quiz.html" class="btn btn-glow-plum btn-lg">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Take "Your Beauty Match" Quiz
+          </a>
+          <a href="boxes.html" class="btn btn-glow-outline btn-lg">
+            Explore Boxes
+          </a>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 pt-3 border-top border-secondary border-opacity-10 mx-auto" style="max-width: 500px;">
+          <div class="d-flex align-items-center gap-2">
+            <div class="text-warning">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="small fw-bold text-plum">4.9/5 Rating</span>
+          </div>
+          <span class="text-muted d-none d-sm-inline">•</span>
+          <div class="small text-muted">
+            <strong class="text-plum">14,800+</strong> Glowing Subscribers
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-10">
+          <div class="hero-img-box position-relative mx-auto">
+            <img src="image/pexels-pavel-danilyuk-6417940.jpg" alt="GLOWBOX Luxury Unboxing Experience">
+            
+            <!-- Floating Badge 1 -->
+            <div class="hero-floating-card card-pos-1">
+              <div class="d-flex align-items-center gap-3">
+                <div class="stat-icon-wrap bg-rose-soft text-rose" style="width: 44px; height: 44px;">
+                  <i class="fa-solid fa-sparkles"></i>
+                </div>
+                <div class="text-start">
+                  <strong class="d-block text-plum small">October Velvet Edit</strong>
+                  <span class="badge bg-champagne text-white">$195 Retail Value</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2 -->
+            <div class="hero-floating-card card-pos-2 d-none d-md-block">
+              <div class="d-flex align-items-center gap-3">
+                <img src="image/stocksnap-face-2573217_1920.jpg" alt="Member" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;">
+                <div class="text-start">
+                  <strong class="d-block text-plum small">Sophia M. (Verified)</strong>
+                  <small class="text-success"><i class="fa-solid fa-circle-check"></i> Discovered 18 Holy Grails</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Partners Ticker -->
+  <section class="py-4 bg-white border-top border-bottom">
+    <div class="container text-center">
+      <p class="small text-uppercase tracking-wider text-muted fw-bold mb-3 text-center">Partnered with 350+ Global Luxury & Clean Formulators</p>
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 gap-md-5 opacity-75 text-center">
+        <span class="font-serif fs-4 fw-bold text-plum">AURA LUXE</span>
+        <span class="font-serif fs-4 fw-bold text-plum">MAISON ÉCLAT</span>
+        <span class="font-serif fs-4 fw-bold text-plum">VALMONT PURE</span>
+        <span class="font-serif fs-4 fw-bold text-plum">BOTANICA LAB</span>
+        <span class="font-serif fs-4 fw-bold text-plum">ATELIER D'OR</span>
+        <span class="font-serif fs-4 fw-bold text-plum">HAUTE DERM</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Subscription Boxes Section -->
+  <section class="py-5 my-4">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+        <span class="section-tag mx-auto"><i class="fa-solid fa-gift"></i> Hand-Curated Edits</span>
+        <h2 class="font-serif text-plum fw-bold mb-3 text-center">Choose Your Discovery Subscription</h2>
+        <p class="text-muted text-center mx-auto section-intro-text">Whether you crave barrier hydration, clinical peptides, or botanical purity, our editors build a bespoke luxury routine for you every month.</p>
+      </div>
+
+      <div class="row g-4" id="homeFeaturedBoxesGrid">
+        <!-- Box 1 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="luxury-card">
+            <div class="card-img-wrap">
+              <img src="image/Inside the Box.jpg" alt="The Velvet Radiance Edit">
+              <span class="card-badge-top-left luxury-badge badge-gold">Best Seller</span>
+            </div>
+            <div class="card-body-luxury">
+              <div class="card-meta-row mb-1">
+                <span class="small text-champagne fw-bold">Skincare & Glow</span>
+                <span class="small text-muted"><i class="fa-solid fa-star text-warning"></i> 4.9 (1.4k)</span>
+              </div>
+              <h4 class="font-serif text-plum fw-bold mb-2 text-center">The Velvet Radiance Edit</h4>
+              <p class="small text-muted mb-3 text-center flex-grow-1">Peptides, botanical toners and radiance elixirs for luminous glass skin.</p>
+              
+              <div class="card-price-row mb-3 pt-2">
+                <span class="text-muted small text-decoration-line-through">$195 Value</span>
+                <div class="fs-4 fw-bold text-plum">$28<span class="fs-6 text-muted fw-normal">/mo</span></div>
+              </div>
+              
+              <div class="card-action-row">
+                <button class="btn btn-glow-plum btn-sm w-100" onclick="openSubscribeModal('box-velvet-radiance')">
+                  <i class="fa-solid fa-bag-shopping me-1"></i> Subscribe Now
+                </button>
+                <a href="box-detail.html?id=box-velvet-radiance" class="btn btn-glow-outline btn-sm w-100 text-center">View Inside Box</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="luxury-card">
+            <div class="card-img-wrap">
+              <img src="image/Inside the Box22.jpg" alt="Clean Botanical Ritual">
+              <span class="card-badge-top-left luxury-badge badge-clean">Clean Certified</span>
+            </div>
+            <div class="card-body-luxury">
+              <div class="card-meta-row mb-1">
+                <span class="small text-champagne fw-bold">Clean Beauty</span>
+                <span class="small text-muted"><i class="fa-solid fa-star text-warning"></i> 4.95 (980)</span>
+              </div>
+              <h4 class="font-serif text-plum fw-bold mb-2 text-center">Clean Botanical Ritual</h4>
+              <p class="small text-muted mb-3 text-center flex-grow-1">100% Organic, vegan adaptogens and cold-pressed bio-ferments.</p>
+              
+              <div class="card-price-row mb-3 pt-2">
+                <span class="text-muted small text-decoration-line-through">$210 Value</span>
+                <div class="fs-4 fw-bold text-plum">$32<span class="fs-6 text-muted fw-normal">/mo</span></div>
+              </div>
+              
+              <div class="card-action-row">
+                <button class="btn btn-glow-plum btn-sm w-100" onclick="openSubscribeModal('box-clean-botanical')">
+                  <i class="fa-solid fa-bag-shopping me-1"></i> Subscribe Now
+                </button>
+                <a href="box-detail.html?id=box-clean-botanical" class="btn btn-glow-outline btn-sm w-100 text-center">View Inside Box</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="luxury-card">
+            <div class="card-img-wrap">
+              <img src="image/Inside the Box6.jpg" alt="Golden Glow Luxury VIP">
+              <span class="card-badge-top-left luxury-badge badge-gold">VIP Prestige</span>
+            </div>
+            <div class="card-body-luxury">
+              <div class="card-meta-row mb-1">
+                <span class="small text-champagne fw-bold">Luxury Prestige</span>
+                <span class="small text-muted"><i class="fa-solid fa-star text-warning"></i> 5.0 (640)</span>
+              </div>
+              <h4 class="font-serif text-plum fw-bold mb-2 text-center">Golden Glow Luxury VIP</h4>
+              <p class="small text-muted mb-3 text-center flex-grow-1">24K colloidal gold, marine collagen and French haute perfumery.</p>
+              
+              <div class="card-price-row mb-3 pt-2">
+                <span class="text-muted small text-decoration-line-through">$340 Value</span>
+                <div class="fs-4 fw-bold text-plum">$48<span class="fs-6 text-muted fw-normal">/mo</span></div>
+              </div>
+              
+              <div class="card-action-row">
+                <button class="btn btn-glow-plum btn-sm w-100" onclick="openSubscribeModal('box-golden-luxe')">
+                  <i class="fa-solid fa-bag-shopping me-1"></i> Subscribe Now
+                </button>
+                <a href="box-detail.html?id=box-golden-luxe" class="btn btn-glow-outline btn-sm w-100 text-center">View Inside Box</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="luxury-card">
+            <div class="card-img-wrap">
+              <img src="image/Your Beauty Matc.jpg" alt="Drench & Dew Hydration Box">
+              <span class="card-badge-top-left luxury-badge badge-rose">Barrier Savior</span>
+            </div>
+            <div class="card-body-luxury">
+              <div class="card-meta-row mb-1">
+                <span class="small text-champagne fw-bold">Skin Barrier</span>
+                <span class="small text-muted"><i class="fa-solid fa-star text-warning"></i> 4.88 (820)</span>
+              </div>
+              <h4 class="font-serif text-plum fw-bold mb-2 text-center">Drench & Dew Hydration</h4>
+              <p class="small text-muted mb-3 text-center flex-grow-1">Multi-depth hyaluronic acid, panthenol, and lipid barrier therapy.</p>
+              
+              <div class="card-price-row mb-3 pt-2">
+                <span class="text-muted small text-decoration-line-through">$180 Value</span>
+                <div class="fs-4 fw-bold text-plum">$26<span class="fs-6 text-muted fw-normal">/mo</span></div>
+              </div>
+              
+              <div class="card-action-row">
+                <button class="btn btn-glow-plum btn-sm w-100" onclick="openSubscribeModal('box-dew-drench')">
+                  <i class="fa-solid fa-bag-shopping me-1"></i> Subscribe Now
+                </button>
+                <a href="box-detail.html?id=box-dew-drench" class="btn btn-glow-outline btn-sm w-100 text-center">View Inside Box</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01. BEAUTY QUIZ SIGNATURE SECTION (Interactive "Your Beauty Match" Engine) -->
+  <section class="py-5 bg-plum text-white position-relative overflow-hidden" id="homeQuizSection">
+    <div class="hero-glow-blob blob-1" style="opacity: 0.2; top: -50px; right: 10%;"></div>
+    <div class="hero-glow-blob blob-2" style="opacity: 0.2; bottom: -50px; left: 5%;"></div>
+    
+    <div class="container position-relative z-2 my-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <span class="section-tag dark mb-2"><i class="fa-solid fa-wand-magic-sparkles text-champagne"></i> Signature Diagnostic</span>
+          <h2 class="font-serif text-white fw-bold display-5 mb-3">
+            "Your Beauty Match" <br>
+            <span class="text-rose">Bespoke Cellular Profiling</span>
+          </h2>
+          <p class="lead opacity-85 mb-4">
+            No two skin barriers are alike. Our clinical 5-point algorithmic skin diagnostic analyzes cellular hydration indices, tone undertones, climate humidity, and formula preferences to build a 100% personalized discovery vanity.
+          </p>
+
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6">
+              <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12);">
+                <i class="fa-solid fa-dna text-champagne fs-4 mb-2"></i>
+                <h6 class="text-white fw-bold mb-1">Barrier Formulation</h6>
+                <p class="small text-white opacity-75 m-0">Calibrated for pH tolerance & hydration levels.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12);">
+                <i class="fa-solid fa-gift text-rose fs-4 mb-2"></i>
+                <h6 class="text-white fw-bold mb-1">$10 Welcome Credit</h6>
+                <p class="small text-white opacity-75 m-0">Instant discount on your first bespoke box.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="quiz.html" class="btn btn-glow-champagne btn-lg px-4">
+              <i class="fa-solid fa-wand-magic-sparkles me-1"></i> Start The 60-Second Quiz
+            </a>
+            <a href="boxes.html" class="btn btn-glow-outline-light btn-lg px-4">
+              Browse Curations
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="position-relative">
+            <!-- Multi-Image Visual Collage with Strict Aspect Ratios -->
+            <div class="row g-3 align-items-center">
+              <div class="col-6">
+                <div class="collage-frame-lg mb-3">
+                  <img src="image/Your Beauty Matcv.jpg" alt="Beauty Diagnostic Analysis">
+                </div>
+                <div class="collage-frame-sm">
+                  <img src="image/Your Beauty Matcq.jpg" alt="Personalized Texture Evaluation">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="collage-frame-lg mb-3">
+                  <img src="image/Your Beauty Matcd.jpg" alt="Bespoke Box Matching">
+                </div>
+                <div class="p-3 rounded-4 shadow-lg text-center" style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                  <div class="fs-4 fw-bold text-champagne">98.4%</div>
+                  <small class="text-white opacity-90 fw-semibold">Diagnostic Compatibility</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. HOW IT WORKS SECTION (The 5-Step Luxury Discovery Ritual) -->
+  <section class="py-5 bg-ivory border-bottom" id="homeHowItWorksSection">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+        <span class="section-tag"><i class="fa-solid fa-arrows-spin"></i> The 5-Step Ritual</span>
+        <h2 class="font-serif text-plum fw-bold mb-3">How The GLOWBOX Ritual Works</h2>
+        <p class="text-muted">A seamless luxury discovery journey with complete customization privileges and member perks.</p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <!-- Step 1 -->
+        <div class="col-md-6 col-lg" data-aos="fade-up" data-aos-delay="100">
+          <div class="step-card text-center">
+            <div class="img-step-wrap">
+              <img src="image/Your Beauty Matcq.jpg" alt="Discover">
+            </div>
+            <div class="step-number mx-auto">1</div>
+            <h5 class="font-serif text-plum fw-bold mb-1">Discover</h5>
+            <p class="small text-muted m-0">Take our diagnostic quiz or explore monthly prestige edits.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-md-6 col-lg" data-aos="fade-up" data-aos-delay="200">
+          <div class="step-card text-center">
+            <div class="img-step-wrap">
+              <img src="image/Inside the Box3.jpg" alt="Personalize">
+            </div>
+            <div class="step-number mx-auto">2</div>
+            <h5 class="font-serif text-plum fw-bold mb-1">Personalize</h5>
+            <p class="small text-muted m-0">Choose 1 hero full-size or deluxe product every month in your dashboard.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-md-6 col-lg" data-aos="fade-up" data-aos-delay="300">
+          <div class="step-card text-center">
+            <div class="img-step-wrap">
+              <img src="image/Inside the Box5.jpg" alt="Subscribe">
+            </div>
+            <div class="step-number mx-auto">3</div>
+            <h5 class="font-serif text-plum fw-bold mb-1">Subscribe</h5>
+            <p class="small text-muted m-0">Select monthly, 3-month or annual prepay. Pause or cancel anytime.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="col-md-6 col-lg" data-aos="fade-up" data-aos-delay="400">
+          <div class="step-card text-center">
+            <div class="img-step-wrap">
+              <img src="image/pexels-pavel-danilyuk-6417959.jpg" alt="Receive">
+            </div>
+            <div class="step-number mx-auto">4</div>
+            <h5 class="font-serif text-plum fw-bold mb-1">Receive</h5>
+            <p class="small text-muted m-0">Unbox luxury keepsake packaging with personalized ritual guide cards.</p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="col-md-6 col-lg" data-aos="fade-up" data-aos-delay="500">
+          <div class="step-card text-center">
+            <div class="img-step-wrap">
+              <img src="image/Beauty Lifestyle Personalization5.jpg" alt="Review & Earn">
+            </div>
+            <div class="step-number mx-auto">5</div>
+            <h5 class="font-serif text-plum fw-bold mb-1">Review</h5>
+            <p class="small text-muted m-0">Earn 50 Glow Points per review & unlock 30% off all shop full-size reorders.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="how-it-works.html" class="btn btn-glow-outline">
+          View Step-by-Step Walkthrough & FAQs &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. ABOUT US SECTION (Brand Philosophy, Clean Standards & Advisory Board) -->
+  <section class="py-5 bg-white border-bottom" id="homeAboutSection">
+    <div class="container py-4">
+      <div class="row align-items-center g-5 mb-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <span class="section-tag"><i class="fa-solid fa-gem"></i> The GLOWBOX Philosophy</span>
+          <h2 class="font-serif text-plum fw-bold display-5 mb-3">
+            Born to Elevate <br>
+            <span class="text-rose">Every Morning & Evening</span> Ritual
+          </h2>
+          <p class="text-muted mb-3">
+            Founded by Paris cosmetic chemists and beauty editors, GLOWBOX solves the guesswork in beauty discovery. We partner directly with 350+ luxury formulators to bring clinically verified active skincare and haute cosmetics straight to your vanity.
+          </p>
+          <div class="row g-3 mb-4">
+            <div class="col-6">
+              <div class="p-3 bg-ivory rounded-3 border">
+                <strong class="text-plum d-block mb-1"><i class="fa-solid fa-leaf text-success me-1"></i> Clean Formulations</strong>
+                <small class="text-muted">100% Free of parabens, phthalates, and synthetic dyes.</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-3 bg-ivory rounded-3 border">
+                <strong class="text-plum d-block mb-1"><i class="fa-solid fa-recycle text-champagne me-1"></i> Eco-Luxe Pledge</strong>
+                <small class="text-muted">FSC recyclable keepsake boxes & infinitely reusable glass bottles.</small>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="btn btn-glow-plum">
+            Read Our Full Story & Advisory Board &rarr;
+          </a>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="collage-frame-lg mb-3">
+                <img src="image/504497-two-girls-487097_1920.jpg" alt="GLOWBOX Community">
+              </div>
+              <div class="collage-frame-sm">
+                <img src="image/pexels-pavel-danilyuk-6417924 (1).jpg" alt="Clinical Dermatology">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="collage-frame-sm mb-3">
+                <img src="image/pexels-content-prod-co-6925542.jpg" alt="Beauty Atelier Formulators">
+              </div>
+              <div class="collage-frame-lg">
+                <img src="image/pexels-a-darmel-8990740.jpg" alt="Aesthetician Masterclass">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. JOURNAL & BEAUTY GUIDE SECTION (Editorial Masterclasses & Science) -->
+  <section class="py-5 bg-ivory" id="homeJournalSection">
+    <div class="container py-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5" data-aos="fade-up">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-newspaper"></i> The Beauty Journal</span>
+          <h2 class="font-serif text-plum fw-bold m-0">Editorial Masterclasses & Guides</h2>
+          <p class="text-muted m-0 mt-1">Science-backed skincare guides, layering rituals, and seasonal ingredient trends.</p>
+        </div>
+        <a href="journal.html" class="btn btn-glow-outline mt-3 mt-md-0">
+          Explore All Articles <i class="fa-solid fa-arrow-right ms-1"></i>
+        </a>
+      </div>
+
+      <div class="row g-4">
+        <!-- Lead Feature Article -->
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="journal-hero-card h-100" style="min-height: 440px;">
+            <img src="image/Beauty Lifestyle Personalization7.jpg" alt="Morning vs Evening Protocol" class="journal-hero-bg">
+            <div class="journal-hero-overlay"></div>
+            <div class="journal-hero-content">
+              <span class="badge bg-rose text-plum fw-bold px-3 py-2 rounded-pill mb-2">Featured Masterclass</span>
+              <h3 class="font-serif text-white fw-bold mb-2">The Molecular Science of Glass Skin: How Peptides Rebuild Cellular Density</h3>
+              <p class="small text-white opacity-85 mb-3">Learn why multi-molecular bio-peptides and cold-pressed floral hydrosols are replacing harsh physical exfoliants.</p>
+              <div class="d-flex align-items-center gap-3 text-white small">
+                <span><i class="fa-solid fa-user-doctor me-1"></i> Dr. Elena Vance</span>
+                <span>•</span>
+                <span>5 min read</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Supporting Editorial Cards with Unused Assets -->
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="d-flex flex-column gap-3 h-100">
+            <!-- Article 1 -->
+            <div class="p-3 bg-white rounded-4 border shadow-sm d-flex gap-3 align-items-center">
+              <img src="image/engin_akyurt-make-up-4541782_1920.jpg" alt="Haute Makeup" class="img-journal-thumb">
+              <div class="flex-grow-1">
+                <span class="small text-champagne fw-bold text-uppercase">Haute Makeup</span>
+                <h5 class="font-serif text-plum fw-bold mb-1">Clean Lip Glazes & Velvet Pigments: Autumn 2026 Trend Report</h5>
+                <small class="text-muted">4 min read • Camille Laurent</small>
+              </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="p-3 bg-white rounded-4 border shadow-sm d-flex gap-3 align-items-center">
+              <img src="image/kaboompics-perfume-791698_1920.jpg" alt="Haute Perfumery" class="img-journal-thumb">
+              <div class="flex-grow-1">
+                <span class="small text-champagne fw-bold text-uppercase">Niche Fragrance</span>
+                <h5 class="font-serif text-plum fw-bold mb-1">Inside French Artisanal Perfumery: Notes of Damask Rose & Golden Amber</h5>
+                <small class="text-muted">5 min read • Grasse Atelier</small>
+              </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="p-3 bg-white rounded-4 border shadow-sm d-flex gap-3 align-items-center">
+              <img src="image/pexels-shkrabaanthony-6187586.jpg" alt="Barrier Hydration" class="img-journal-thumb">
+              <div class="flex-grow-1">
+                <span class="small text-champagne fw-bold text-uppercase">Cellular Science</span>
+                <h5 class="font-serif text-plum fw-bold mb-1">Squalane, Ceramides & Lipid Barrier Protection During Seasonal Transitions</h5>
+                <small class="text-muted">6 min read • Master Aesthetician</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. NEW SECTION 1: THE CLEAN SCIENCE LAB & ARTISANAL EXTRACTION CHARTER -->
+  <section class="py-5 bg-white border-top border-bottom" id="homeCleanScienceSection">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5" data-aos="fade-right">
+          <span class="section-tag"><i class="fa-solid fa-flask-vial text-rose"></i> Clinical Formulation</span>
+          <h2 class="font-serif text-plum fw-bold display-5 mb-3">
+            The Clean Science <br>
+            <span class="text-rose">Extraction Lab</span>
+          </h2>
+          <p class="text-muted mb-4">
+            Every formula in GLOWBOX is tested in our Switzerland & Paris partner clean laboratories. We combine cold-pressed alpine adaptogens with bio-fermented oligopeptides to deliver ageless cellular vitality.
+          </p>
+
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="d-flex align-items-start gap-3 p-3 bg-ivory rounded-3 border">
+              <i class="fa-solid fa-microscope text-champagne fs-4 mt-1"></i>
+              <div>
+                <strong class="text-plum d-block mb-1">Cold-Extraction Bio-Actives</strong>
+                <p class="small text-muted m-0">Zero thermal degradation preserving 99.2% of botanical polyphenols.</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3 p-3 bg-ivory rounded-3 border">
+              <i class="fa-solid fa-shield-heart text-rose fs-4 mt-1"></i>
+              <div>
+                <strong class="text-plum d-block mb-1">Ageless Barrier Resilience</strong>
+                <p class="small text-muted m-0">Proven clinical elasticity retention across all generational skin types.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="quiz.html" class="btn btn-glow-plum">
+            <i class="fa-solid fa-wand-magic-sparkles me-1"></i> Match Your Skin Barrier &rarr;
+          </a>
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="collage-frame-lg mb-3">
+                <img src="image/pexels-shkrabaanthony-6187610.jpg" alt="Laboratory Extraction">
+              </div>
+              <div class="collage-frame-sm">
+                <img src="image/camille-brodard-VxAwTeiqDao-unsplash.jpg" alt="Botanical Spa Texture">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="collage-frame-sm mb-3">
+                <img src="image/age-cymru-GPrh_GLiWCI-unsplash.jpg" alt="Ageless Generational Beauty">
+              </div>
+              <div class="collage-frame-lg">
+                <img src="image/pexels-shvets-production-8412745.jpg" alt="Aesthetic Skincare Protocol">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06. NEW SECTION 2: BEAUTY WORTH TALKING ABOUT (VIP Video Unboxing Stories Suite) -->
+  <section class="py-5 bg-ivory border-bottom" id="homeVideoStoriesSection">
+    <div class="container-fluid px-lg-5 py-4">
+      <div class="row align-items-center g-4">
+        <!-- Left Title Column -->
+        <div class="col-lg-3 col-xl-3 text-center text-lg-start" data-aos="fade-right">
+          <div class="pe-lg-3">
+            <span class="section-tag mx-auto mx-lg-0"><i class="fa-solid fa-video text-rose"></i> Real Unboxings</span>
+            <h2 class="font-serif text-plum fw-bold display-5 mb-2 text-center text-lg-start" style="line-height: 1.15;">
+              Beauty Worth Talking About
+            </h2>
+            <p class="text-muted fs-5 mb-4 text-center text-lg-start">
+              What our verified subscribers are saying.
+            </p>
+            <div class="d-flex justify-content-center justify-content-lg-start">
+              <a href="boxes.html" class="btn btn-glow-rose btn-lg px-4 py-3 fw-bold" style="background-color: #FF5A36; color: #fff; border-radius: var(--radius-sm); border: none;">
+                Discover what you love.
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Vertical UGC Video Stories with Unused Photography Assets -->
+        <div class="col-lg-9 col-xl-9" data-aos="fade-left">
+          <div class="row g-3 g-md-4">
+            <!-- Video Story 1 -->
+            <div class="col-6 col-md-3">
+              <div class="ugc-story-card" onclick="openUgcVideoModal('Sophia M.', 'Unboxing The Velvet Radiance Edit', 'image/Beauty Lifestyle Personalization.jpg')">
+                <img src="image/pexels-pavel-danilyuk-6417940.jpg" alt="Member Skincare Unboxing" class="ugc-story-img">
+                <div class="ugc-story-overlay">
+                  <div></div>
+                  <div class="ugc-play-btn">
+                    <i class="fa-solid fa-play ms-1"></i>
+                  </div>
+                  <div class="ugc-quote-bubble">
+                    <p>"For the first time, I'm actually excited to do my skincare routine tonight."</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video Story 2 -->
+            <div class="col-6 col-md-3">
+              <div class="ugc-story-card" onclick="openUgcVideoModal('Isabella R.', 'Botanical Serum Routine', 'image/Product Collections.jpg')">
+                <img src="image/Your Beauty Matcs.jpg" alt="Curated Skincare Products" class="ugc-story-img">
+                <div class="ugc-story-overlay">
+                  <div></div>
+                  <div class="ugc-play-btn">
+                    <i class="fa-solid fa-play ms-1"></i>
+                  </div>
+                  <div class="ugc-quote-bubble">
+                    <p>"Trust me, you're gonna love it."</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video Story 3 -->
+            <div class="col-6 col-md-3">
+              <div class="ugc-story-card" onclick="openUgcVideoModal('Chloe D.', 'VIP Golden Prestige Unboxing', 'image/Inside the Box6.jpg')">
+                <img src="image/Inside the Box6.jpg" alt="VIP Golden Box Unboxing" class="ugc-story-img">
+                <div class="ugc-story-overlay">
+                  <div></div>
+                  <div class="ugc-play-btn">
+                    <i class="fa-solid fa-play ms-1"></i>
+                  </div>
+                  <div class="ugc-quote-bubble">
+                    <p>"Your dream beauty routine? It starts with one box."</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video Story 4 -->
+            <div class="col-6 col-md-3">
+              <div class="ugc-story-card" onclick="openUgcVideoModal('Amara O.', 'Fresh Unboxing Experience', 'image/Inside the Box5.jpg')">
+                <img src="image/stocksnap-face-2573217_1920.jpg" alt="Delighted Subscriber with GLOWBOX" class="ugc-story-img">
+                <div class="ugc-story-overlay">
+                  <div></div>
+                  <div class="ugc-play-btn">
+                    <i class="fa-solid fa-play ms-1"></i>
+                  </div>
+                  <div class="ugc-quote-bubble">
+                    <p>"With GLOWBOX, my beauty routine is never stale."</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Luxury Footer -->
+  <footer class="glow-footer">
+    <div class="container">
+      <div class="row g-5 mb-5">
+        <div class="col-lg-4">
+          <a href="index.html" class="d-inline-block mb-3">
+            <span class="brand-logo-text text-white">GLOWBOX<span class="brand-sparkle">✦</span></span>
+          </a>
+          <p class="small text-white opacity-75 mb-4">
+            GLOWBOX is the premier luxury beauty and skincare discovery platform. Every month, we curate bespoke high-performance formulations to elevate your beauty ritual.
+          </p>
+          <div class="footer-social-strip mb-3">
+            <a href="https://www.instagram.com/glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-insta" title="Instagram @glowboxbeauty"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-fb" title="Facebook @glowboxbeauty"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/glowboxluxury" target="_blank" rel="noopener noreferrer" class="social-circle soc-linkedin" title="LinkedIn @glowboxluxury"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-x" title="X / Twitter @glowboxbeauty"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-yt" title="YouTube GLOWBOX Masterclasses"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.pinterest.com/glowboxluxury" target="_blank" rel="noopener noreferrer" class="social-circle soc-pin" title="Pinterest @glowboxluxury"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://www.threads.net/@glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-threads" title="Threads @glowbox"><i class="fa-brands fa-threads"></i></a>
+          </div>
+          <div class="d-flex align-items-center gap-2 small text-white opacity-75">
+            <i class="fa-solid fa-camera-retro text-rose"></i>
+            <span>Tag <strong>#GlowboxUnboxing</strong> on Instagram</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Discovery</h6>
+          <ul class="list-unstyled">
+            <li><a href="boxes.html" class="footer-link">Explore Boxes</a></li>
+            <li><a href="quiz.html" class="footer-link">Beauty Quiz</a></li>
+            <li><a href="how-it-works.html" class="footer-link">How It Works</a></li>
+            <li><a href="box-detail.html?id=box-velvet-radiance" class="footer-link">Velvet Radiance Edit</a></li>
+            <li><a href="box-detail.html?id=box-golden-luxe" class="footer-link">VIP Golden Club</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">The Brand</h6>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link">Our Story</a></li>
+            <li><a href="journal.html" class="footer-link">Beauty Journal</a></li>
+            <li><a href="about.html#sustainability" class="footer-link">Clean Pledge</a></li>
+            <li><a href="contact.html" class="footer-link">Brand Partnerships</a></li>
+            <li><a href="contact.html" class="footer-link">Press & Media</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Support</h6>
+          <ul class="list-unstyled">
+            <li><a href="contact.html" class="footer-link">Help Center & FAQ</a></li>
+            <li><a href="dashboard.html" class="footer-link">Customer Dashboard</a></li>
+            <li><a href="dashboard.html#subscription" class="footer-link">Manage Subscription</a></li>
+            <li><a href="admin.html" class="footer-link">Admin Portal</a></li>
+            <li><a href="login.html" class="footer-link">Sign In / Register</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Join The Glow Club</h6>
+          <p class="small text-white opacity-75 mb-3">Subscribe to secret flash sales and expert skincare masterclasses.</p>
+          <form onsubmit="event.preventDefault(); showGlowToast('Subscribed! ✨', 'You are on the VIP Beauty Insider list.', 'success');">
+            <div class="input-group input-group-sm mb-2">
+              <input type="email" class="form-control" placeholder="Your email..." required>
+              <button class="btn btn-glow-champagne" type="submit">Join</button>
+            </div>
+            <small class="text-white opacity-50" style="font-size: 0.72rem;">No spam. Unsubscribe anytime.</small>
+          </form>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-4 border-top border-secondary border-opacity-25 small opacity-75">
+        <p class="m-0">© 2026 GLOWBOX Inc. Discover. Unbox. Glow. All rights reserved.</p>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="#" class="text-white opacity-75">Privacy Policy</a>
+          <a href="#" class="text-white opacity-75">Terms of Service</a>
+          <a href="#" class="text-white opacity-75">Shipping & Returns</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

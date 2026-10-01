@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Your Account — GLOWBOX Discovery Club</title>
+  <meta name="description" content="Register for GLOWBOX to access personalized luxury beauty subscription boxes, 30% member store discounts, and diagnostic profiling.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-ivory">
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-xl glow-nav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-logo-text">GLOWBOX<span class="brand-sparkle">✦</span></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#glowNavbar" aria-controls="glowNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars fs-4"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="glowNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-xl-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="boxes.html">Explore Boxes</a></li>
+          <li class="nav-item"><a class="nav-link" href="quiz.html">Beauty Quiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="how-it-works.html">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="journal.html">Journal</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-cta-group d-flex align-items-center gap-2">
+          <a href="login.html" class="btn btn-sm btn-glow-plum px-3">
+            <i class="fa-regular fa-user me-1"></i> Sign In
+          </a>
+          <a href="dashboard.html" class="btn btn-sm btn-glow-outline px-3">
+            <i class="fa-solid fa-sparkles me-1"></i> My Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Register Card Layout -->
+  <main class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-9">
+          <div class="card border-0 shadow-xl rounded-4 overflow-hidden bg-white" data-aos="zoom-in">
+            <div class="row g-0">
+              <div class="col-md-5 d-none d-md-block position-relative">
+                <img src="image/pexels-ilayda0700-36706842.jpg" alt="Join GLOWBOX" class="w-100 h-100" style="object-fit: cover;">
+                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(180deg, rgba(36, 25, 35, 0.15) 0%, rgba(36, 25, 35, 0.85) 100%);"></div>
+                <div class="position-absolute bottom-0 start-0 p-4 text-white">
+                  <span class="badge bg-champagne text-plum fw-bold mb-2">$10 Welcome Credit</span>
+                  <h4 class="font-serif text-white fw-bold mb-1">Join the Premier Beauty Discovery Circle</h4>
+                  <p class="small opacity-80 m-0">5 luxury formulations delivered monthly, 100% cruelty-free & clean certified.</p>
+                </div>
+              </div>
+
+              <div class="col-md-7 p-4 p-md-5">
+                <!-- Clickable Centered Logo inside Card -->
+                <div class="text-center mb-4">
+                  <a href="index.html" class="d-inline-flex align-items-center gap-2 mb-2 text-decoration-none" title="Return to Home">
+                    <span class="brand-logo-text fs-2">GLOWBOX<span class="brand-sparkle">✦</span></span>
+                  </a>
+                  <div class="d-block">
+                    <span class="section-tag mx-auto"><i class="fa-solid fa-sparkles"></i> New Member Benefit</span>
+                  </div>
+                  <h2 class="font-serif text-plum fw-bold mb-1 text-center">Create Your Beauty Account</h2>
+                  <p class="small text-muted text-center mx-auto" style="max-width: 90%;">Join over 14,800 beauty lovers discovering bespoke luxury skincare.</p>
+                </div>
+
+                <form onsubmit="handleRegisterSubmit(event)">
+                  <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                      <label class="form-label small fw-bold">First Name</label>
+                      <input type="text" class="form-control" required placeholder="Sophia" id="regFirstName">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label small fw-bold">Last Name</label>
+                      <input type="text" class="form-control" required placeholder="Montgomery" id="regLastName">
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label small fw-bold">Email Address</label>
+                    <input type="email" class="form-control" required placeholder="sophia@example.com" id="regEmail">
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label small fw-bold">Create Password</label>
+                    <input type="password" class="form-control" required placeholder="Minimum 8 characters" id="regPass">
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label small fw-bold d-block">Primary Beauty Interests</label>
+                    <div class="d-flex flex-wrap gap-2">
+                      <input type="checkbox" class="btn-check" id="interest-glass" checked autocomplete="off">
+                      <label class="btn btn-sm btn-outline-secondary rounded-pill" for="interest-glass">✨ Glass Skin</label>
+
+                      <input type="checkbox" class="btn-check" id="interest-clean" checked autocomplete="off">
+                      <label class="btn btn-sm btn-outline-secondary rounded-pill" for="interest-clean">🌿 Clean & Organic</label>
+
+                      <input type="checkbox" class="btn-check" id="interest-antiaging" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-secondary rounded-pill" for="interest-antiaging">💎 Anti-Aging</label>
+
+                      <input type="checkbox" class="btn-check" id="interest-perfume" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-secondary rounded-pill" for="interest-perfume">🌸 Haute Fragrance</label>
+                    </div>
+                  </div>
+
+                  <div class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input" id="termsCheck" required checked>
+                    <label class="form-check-label small text-muted" for="termsCheck">
+                      I agree to the <a href="#" class="text-plum text-decoration-underline">Terms of Service</a> & receive personalized beauty drops.
+                    </label>
+                  </div>
+
+                  <button type="submit" class="btn btn-glow-plum btn-lg w-100 mb-3">
+                    <i class="fa-solid fa-wand-magic-sparkles me-2"></i> Create Account & Match Box
+                  </button>
+                </form>
+
+                <div class="text-center pt-3 border-top small text-muted">
+                  Already have an account? <a href="login.html" class="fw-bold text-plum">Sign In &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Luxury Footer -->
+  <footer class="glow-footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5 mb-5">
+        <div class="col-lg-4">
+          <a href="index.html" class="d-inline-block mb-3">
+            <span class="brand-logo-text text-white">GLOWBOX<span class="brand-sparkle">✦</span></span>
+          </a>
+          <p class="small text-white opacity-75 mb-4">
+            GLOWBOX is the premier luxury beauty and skincare discovery platform. Every month, we curate bespoke high-performance formulations to elevate your beauty ritual.
+          </p>
+          <div class="footer-social-strip mb-3">
+            <a href="https://www.instagram.com/glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-insta" title="Instagram @glowboxbeauty"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-fb" title="Facebook @glowboxbeauty"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/glowboxluxury" target="_blank" rel="noopener noreferrer" class="social-circle soc-linkedin" title="LinkedIn @glowboxluxury"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-x" title="X / Twitter @glowboxbeauty"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-yt" title="YouTube GLOWBOX Masterclasses"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.pinterest.com/glowboxluxury" target="_blank" rel="noopener noreferrer" class="social-circle soc-pin" title="Pinterest @glowboxluxury"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://www.threads.net/@glowboxbeauty" target="_blank" rel="noopener noreferrer" class="social-circle soc-threads" title="Threads @glowbox"><i class="fa-brands fa-threads"></i></a>
+          </div>
+          <div class="d-flex align-items-center gap-2 small text-white opacity-75">
+            <i class="fa-solid fa-camera-retro text-rose"></i>
+            <span>Tag <strong>#GlowboxUnboxing</strong> on Instagram</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Discovery</h6>
+          <ul class="list-unstyled">
+            <li><a href="boxes.html" class="footer-link">Explore Boxes</a></li>
+            <li><a href="quiz.html" class="footer-link">Beauty Quiz</a></li>
+            <li><a href="how-it-works.html" class="footer-link">How It Works</a></li>
+            <li><a href="box-detail.html?id=box-velvet-radiance" class="footer-link">Velvet Radiance Edit</a></li>
+            <li><a href="box-detail.html?id=box-golden-luxe" class="footer-link">VIP Golden Club</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">The Brand</h6>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link">Our Story</a></li>
+            <li><a href="journal.html" class="footer-link">Beauty Journal</a></li>
+            <li><a href="about.html#sustainability" class="footer-link">Clean Pledge</a></li>
+            <li><a href="contact.html" class="footer-link">Brand Partnerships</a></li>
+            <li><a href="contact.html" class="footer-link">Press & Media</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Support</h6>
+          <ul class="list-unstyled">
+            <li><a href="contact.html" class="footer-link">Help Center & FAQ</a></li>
+            <li><a href="dashboard.html" class="footer-link">Customer Dashboard</a></li>
+            <li><a href="dashboard.html#subscription" class="footer-link">Manage Subscription</a></li>
+            <li><a href="admin.html" class="footer-link">Admin Portal</a></li>
+            <li><a href="login.html" class="footer-link">Sign In / Register</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Join The Glow Club</h6>
+          <p class="small text-white opacity-75 mb-3">Subscribe for secret member drops and skincare masterclasses.</p>
+          <form onsubmit="event.preventDefault(); showGlowToast('Subscribed! ✨', 'You are on the VIP Beauty Insider list.', 'success');">
+            <div class="input-group input-group-sm mb-2">
+              <input type="email" class="form-control" placeholder="Your email..." required>
+              <button class="btn btn-glow-champagne" type="submit">Join</button>
+            </div>
+            <small class="text-white opacity-50" style="font-size: 0.72rem;">No spam. Unsubscribe anytime.</small>
+          </form>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-4 border-top border-secondary border-opacity-25 small opacity-75">
+        <p class="m-0">© 2026 GLOWBOX Inc. Discover. Unbox. Glow. All rights reserved.</p>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="#" class="text-white opacity-75">Privacy Policy</a>
+          <a href="#" class="text-white opacity-75">Terms of Service</a>
+          <a href="#" class="text-white opacity-75">Shipping & Returns</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    function handleRegisterSubmit(e) {
+      e.preventDefault();
+      const first = document.getElementById("regFirstName").value;
+      const last = document.getElementById("regLastName").value;
+      const email = document.getElementById("regEmail").value;
+
+      const state = getGlowState();
+      state.currentUser.name = `${first} ${last}`;
+      state.currentUser.email = email;
+      saveGlowState(state);
+
+      if (typeof confetti !== 'undefined') {
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      }
+
+      showGlowToast("Account Created! ✨", `Welcome to GLOWBOX, ${first}! Let's find your match.`, "success");
+
+      setTimeout(() => {
+        window.location.href = "quiz.html";
+      }, 1200);
+    }
+  </script>
+</body>
+</html>
