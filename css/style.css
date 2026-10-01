@@ -1842,5 +1842,140 @@ textarea.form-control {
     margin-left: auto !important;
     margin-right: auto !important;
   }
+/* ==========================================================================
+   THEME TOGGLE & LUXURY DARK MODE
+   ========================================================================== */
+.btn-theme-toggle {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  border-radius: 50%;
+  background: rgba(36, 25, 35, 0.06);
+  border: 1px solid rgba(36, 25, 35, 0.12);
+  color: var(--color-plum);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.btn-theme-toggle:hover {
+  background: var(--color-rose-light);
+  color: var(--color-rose-deep);
+  transform: rotate(20deg) scale(1.08);
+  box-shadow: 0 4px 12px rgba(216, 155, 168, 0.3);
+}
+
+[data-theme="dark"] .btn-theme-toggle {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #E7D5B5;
+}
+
+[data-theme="dark"] .btn-theme-toggle:hover {
+  background: rgba(231, 213, 181, 0.25);
+  color: #FFFFFF;
+  transform: rotate(-20deg) scale(1.08);
+  box-shadow: 0 4px 15px rgba(231, 213, 181, 0.4);
+}
+
+/* Luxury Dark Theme Master Overrides */
+[data-theme="dark"] {
+  --color-ivory: #140d13;
+  --color-ivory-dark: #1d141d;
+  --color-charcoal: #EDE8EE;
+  --color-charcoal-muted: #BDB7C2;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-plum: #F8EDF2;
+  --color-plum-dark: #0b060b;
+  --color-plum-light: #2b1b28;
+}
+
+[data-theme="dark"] body {
+  background-color: #140d13 !important;
+  color: #EDE8EE !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #1c121b !important;
+}
+
+[data-theme="dark"] .bg-ivory {
+  background-color: #140d13 !important;
+}
+
+[data-theme="dark"] .glow-nav {
+  background: rgba(20, 13, 19, 0.96) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .glow-nav.nav-scrolled {
+  background: rgba(14, 8, 13, 0.98) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .brand-logo-text {
+  color: #F8EDF2 !important;
+}
+
+[data-theme="dark"] .navbar-nav .nav-link {
+  color: #EDE8EE !important;
+}
+
+[data-theme="dark"] .navbar-nav .nav-link:hover,
+[data-theme="dark"] .navbar-nav .nav-link.active {
+  color: var(--color-champagne-light) !important;
+}
+
+[data-theme="dark"] .luxury-card,
+[data-theme="dark"] .card:not(.bg-plum),
+[data-theme="dark"] .quiz-container,
+[data-theme="dark"] .journal-post-card,
+[data-theme="dark"] .step-card {
+  background-color: #1d131c !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #EDE8EE;
+}
+
+[data-theme="dark"] .text-plum {
+  color: #F8EDF2 !important;
+}
+
+[data-theme="dark"] .text-muted {
+  color: #BDB7C2 !important;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+  background-color: #261924 !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .form-control:focus {
+  background-color: #2b1d29 !important;
+  color: #FFFFFF !important;
+  border-color: var(--color-rose) !important;
+}
+
+[data-theme="dark"] .modal-content {
+  background-color: #1d131c !important;
+  color: #EDE8EE;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .navbar-toggler {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #F8EDF2 !important;
+}
+
+[data-theme="dark"] .glow-nav .navbar-collapse {
+  background: #1d131c !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
