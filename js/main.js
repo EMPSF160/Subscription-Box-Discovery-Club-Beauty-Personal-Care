@@ -1,13 +1,77 @@
-// Initialize theme immediately to prevent flashing
+// Global Safe Theme System - Immediately Apply to Prevent Flash
 (function() {
-  const savedTheme = localStorage.getItem("glowbox_theme") || "light";
-  document.documentElement.setAttribute("data-theme", savedTheme);
+  try {
+    const savedTheme = localStorage.getItem("glowbox_theme") || "light";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  } catch (e) {
+    console.error("Theme init error:", e);
+  }
 })();
 
+function applyGlowTheme(theme) {
+  const t = theme === "dark" ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", t);
+  if (t === "dark") {
+    document.documentElement.classList.add("dark-theme");
+  } else {
+    document.documentElement.classList.remove("dark-theme");
+  }
+  if (document.body) {
+    document.body.setAttribute("data-theme", t);
+    if (t === "dark") {
+      document.body.classList.add("dark-theme");
+    } else {
+      document.body.classList.remove("dark-theme");
+    }
+  }
+  try {
+    localStorage.setItem("glowbox_theme", t);
+  } catch (e) {}
+  updateThemeIcons(t);
+}
+
+window.applyGlowTheme = applyGlowTheme;
+
+window.toggleGlowTheme = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const currentTheme = document.documentElement.getAttribute("data-theme") || (document.body && document.body.getAttribute("data-theme")) || "light";
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  applyGlowTheme(newTheme);
+  
+  if (typeof showGlowToast === "function") {
+    showGlowToast(
+      newTheme === "dark" ? "Dark Ritual Active 🌙" : "Daylight Radiance Active ☀️",
+      newTheme === "dark" ? "Switched to midnight luxury dark theme." : "Switched to daylight ivory luxury theme.",
+      "info"
+    );
+  }
+};
+
+function updateThemeIcons(theme) {
+  const t = theme === "dark" ? "dark" : "light";
+  document.querySelectorAll(".theme-icon-indicator").forEach(icon => {
+    if (t === "dark") {
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+    } else {
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Sync theme toggle icons on load
+  // Sync theme on DOM ready
   const savedTheme = localStorage.getItem("glowbox_theme") || "light";
-  updateThemeIcons(savedTheme);
+  applyGlowTheme(savedTheme);
+
+  // Bind click directly to all theme toggle buttons
+  document.querySelectorAll(".btn-theme-toggle").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.toggleGlowTheme(e);
+    });
+  });
 
   // Sticky Navbar Blur and Shadow on scroll
   const nav = document.querySelector(".glow-nav");
@@ -43,35 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Highlight active link in navigation
   highlightCurrentNav();
 });
-
-// Toggle Theme Function
-function toggleGlowTheme() {
-  const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
-  document.documentElement.setAttribute("data-theme", newTheme);
-  localStorage.setItem("glowbox_theme", newTheme);
-  updateThemeIcons(newTheme);
-  
-  if (typeof showGlowToast === "function") {
-    showGlowToast(
-      newTheme === "dark" ? "Dark Ritual Active 🌙" : "Daylight Radiance Active ☀️",
-      newTheme === "dark" ? "Switched to midnight luxury dark theme." : "Switched to daylight ivory luxury theme.",
-      "info"
-    );
-  }
-}
-
-function updateThemeIcons(theme) {
-  document.querySelectorAll(".theme-icon-indicator").forEach(icon => {
-    if (theme === "dark") {
-      icon.classList.remove("fa-moon");
-      icon.classList.add("fa-sun");
-    } else {
-      icon.classList.remove("fa-sun");
-      icon.classList.add("fa-moon");
-    }
-  });
-}
 
 function highlightCurrentNav() {
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
