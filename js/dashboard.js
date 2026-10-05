@@ -104,54 +104,54 @@ function renderOverviewTab(container, user, state) {
 
     <!-- Quick Stats Grid -->
     <div class="row g-3 mb-4">
-      <div class="col-sm-6 col-xl-3">
-        <div class="stat-card-luxury">
+      <div class="col-12 col-sm-6 col-xl-3">
+        <div class="stat-card-luxury h-100">
           <div>
-            <span class="text-muted small text-uppercase">Plan Status</span>
-            <h4 class="font-serif text-plum fw-bold my-1">
+            <span class="text-muted small text-uppercase fw-semibold d-block mb-1">Plan Status</span>
+            <h4 class="font-serif fw-bold my-1">
               <span class="badge ${user.subscription.status === 'Active' ? 'bg-success' : 'bg-warning'} text-white">
                 ${user.subscription.status}
               </span>
             </h4>
-            <small class="text-muted">${user.subscription.tier}</small>
+            <small class="text-muted d-block mt-1">${user.subscription.tier}</small>
           </div>
-          <div class="stat-icon-wrap bg-rose-soft text-rose">
+          <div class="stat-icon-wrap bg-rose-soft text-rose flex-shrink-0 ms-2">
             <i class="fa-solid fa-gem"></i>
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-xl-3">
-        <div class="stat-card-luxury">
+      <div class="col-12 col-sm-6 col-xl-3">
+        <div class="stat-card-luxury h-100">
           <div>
-            <span class="text-muted small text-uppercase">Next Box Delivery</span>
-            <h5 class="font-serif text-plum fw-bold my-1">Nov 8 - 11</h5>
-            <small class="text-muted">Tracking # Active</small>
+            <span class="text-muted small text-uppercase fw-semibold d-block mb-1">Next Box Delivery</span>
+            <h4 class="font-serif text-plum fw-bold my-1">Nov 8 - 11</h4>
+            <small class="text-muted d-block mt-1">Tracking # Active</small>
           </div>
-          <div class="stat-icon-wrap bg-ivory text-plum">
+          <div class="stat-icon-wrap bg-ivory text-plum flex-shrink-0 ms-2">
             <i class="fa-solid fa-truck-fast"></i>
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-xl-3">
-        <div class="stat-card-luxury">
+      <div class="col-12 col-sm-6 col-xl-3">
+        <div class="stat-card-luxury h-100">
           <div>
-            <span class="text-muted small text-uppercase">Total Discovered</span>
+            <span class="text-muted small text-uppercase fw-semibold d-block mb-1">Total Discovered</span>
             <h4 class="font-serif text-plum fw-bold my-1">${user.receivedProducts.length + 12} Products</h4>
-            <small class="text-success fw-bold">Saved $680+ Retail</small>
+            <small class="text-success fw-bold d-block mt-1">Saved $680+ Retail</small>
           </div>
-          <div class="stat-icon-wrap bg-rose-soft text-rose">
+          <div class="stat-icon-wrap bg-rose-soft text-rose flex-shrink-0 ms-2">
             <i class="fa-solid fa-spray-can-sparkles"></i>
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-xl-3">
-        <div class="stat-card-luxury">
+      <div class="col-12 col-sm-6 col-xl-3">
+        <div class="stat-card-luxury h-100">
           <div>
-            <span class="text-muted small text-uppercase">Store Member Perk</span>
+            <span class="text-muted small text-uppercase fw-semibold d-block mb-1">Store Member Perk</span>
             <h4 class="font-serif text-plum fw-bold my-1">30% OFF</h4>
-            <small class="text-muted">On all full-size bottles</small>
+            <small class="text-muted d-block mt-1">On all full-size bottles</small>
           </div>
-          <div class="stat-icon-wrap bg-ivory text-champagne">
+          <div class="stat-icon-wrap bg-ivory text-champagne flex-shrink-0 ms-2">
             <i class="fa-solid fa-tags"></i>
           </div>
         </div>
@@ -318,19 +318,21 @@ function renderSubscriptionTab(container, user, state) {
 
       <!-- Perks Card -->
       <div class="col-lg-4">
-        <div class="p-4 bg-plum text-white rounded-4 shadow-sm h-100">
-          <span class="section-tag dark mb-2"><i class="fa-solid fa-crown text-champagne"></i> Member Benefits</span>
-          <h4 class="font-serif text-white fw-bold mb-3">Your Glow Perks</h4>
-          <ul class="list-unstyled d-flex flex-column gap-3 small opacity-90 mb-4">
-            <li class="d-flex gap-2"><i class="fa-solid fa-check text-rose mt-1"></i> <strong>30% Off Store:</strong> Member pricing on all re-orders.</li>
-            <li class="d-flex gap-2"><i class="fa-solid fa-check text-rose mt-1"></i> <strong>Hero Choice:</strong> Pick 1 product each month before packing.</li>
-            <li class="d-flex gap-2"><i class="fa-solid fa-check text-rose mt-1"></i> <strong>Free Global Shipping:</strong> Zero fulfillment fees ever.</li>
-            <li class="d-flex gap-2"><i class="fa-solid fa-check text-rose mt-1"></i> <strong>Earn 50 Pts / Review:</strong> Redeem for luxury full-size gifts.</li>
-          </ul>
+        <div class="p-4 bg-plum text-white rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+          <div>
+            <span class="section-tag dark mb-2"><i class="fa-solid fa-crown text-champagne"></i> Member Benefits</span>
+            <h4 class="font-serif text-white fw-bold mb-3">Your Glow Perks</h4>
+            <ul class="list-unstyled d-flex flex-column gap-3 small text-white opacity-90 mb-4">
+              <li class="d-flex gap-2"><i class="fa-solid fa-check text-rose mt-1"></i> <div><strong class="text-white">30% Off Store:</strong> <span class="text-white">Member pricing on all re-orders.</span></div></li>
+              <li class="d-flex gap-2"><i class="fa-solid fa-check text-rose mt-1"></i> <div><strong class="text-white">Hero Choice:</strong> <span class="text-white">Pick 1 product each month before packing.</span></div></li>
+              <li class="d-flex gap-2"><i class="fa-solid fa-check text-rose mt-1"></i> <div><strong class="text-white">Free Global Shipping:</strong> <span class="text-white">Zero fulfillment fees ever.</span></div></li>
+              <li class="d-flex gap-2"><i class="fa-solid fa-check text-rose mt-1"></i> <div><strong class="text-white">Earn 50 Pts / Review:</strong> <span class="text-white">Redeem for luxury full-size gifts.</span></div></li>
+            </ul>
+          </div>
 
-          <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.08);">
+          <div class="p-3 rounded-3 mt-3" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18);">
             <small class="text-champagne-light fw-bold text-uppercase d-block mb-1">Referral Link</small>
-            <p class="small text-white opacity-75 mb-2">Give $10 off, get $10 in Glow credits.</p>
+            <p class="small text-white opacity-90 mb-2">Give $10 off, get $10 in Glow credits.</p>
             <div class="input-group input-group-sm">
               <input type="text" class="form-control" value="glowbox.com/ref/sophia98" readonly>
               <button class="btn btn-glow-champagne" onclick="showGlowToast('Copied!', 'Referral link copied to clipboard.', 'success')">Copy</button>

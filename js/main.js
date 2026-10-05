@@ -3,6 +3,11 @@
   try {
     const savedTheme = localStorage.getItem("glowbox_theme") || "light";
     document.documentElement.setAttribute("data-theme", savedTheme);
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark-theme");
+    } else {
+      document.documentElement.classList.remove("dark-theme");
+    }
   } catch (e) {
     console.error("Theme init error:", e);
   }
@@ -32,8 +37,15 @@ function applyGlowTheme(theme) {
 
 window.applyGlowTheme = applyGlowTheme;
 
+let lastThemeToggleTime = 0;
 window.toggleGlowTheme = function(e) {
   if (e && e.preventDefault) e.preventDefault();
+  
+  // Guard against double invocation within 250ms
+  const now = Date.now();
+  if (now - lastThemeToggleTime < 250) return;
+  lastThemeToggleTime = now;
+
   const currentTheme = document.documentElement.getAttribute("data-theme") || (document.body && document.body.getAttribute("data-theme")) || "light";
   const newTheme = currentTheme === "dark" ? "light" : "dark";
   applyGlowTheme(newTheme);
@@ -64,14 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Sync theme on DOM ready
   const savedTheme = localStorage.getItem("glowbox_theme") || "light";
   applyGlowTheme(savedTheme);
-
-  // Bind click directly to all theme toggle buttons
-  document.querySelectorAll(".btn-theme-toggle").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.toggleGlowTheme(e);
-    });
-  });
 
   // Sticky Navbar Blur and Shadow on scroll
   const nav = document.querySelector(".glow-nav");
