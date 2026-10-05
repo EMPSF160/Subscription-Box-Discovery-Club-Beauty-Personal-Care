@@ -233,38 +233,38 @@ function renderSubscriptionTab(container, user, state) {
 
   container.innerHTML = `
     <div class="mb-4">
-      <h2 class="font-serif text-plum fw-bold mb-1">My Subscription Management</h2>
+      <h2 class="font-serif text-plum fw-bold mb-1" style="word-break: break-word;">My Subscription Management</h2>
       <p class="text-muted m-0">Control billing frequency, skip upcoming boxes, or adjust delivery schedules freely.</p>
     </div>
 
     <div class="row g-4 mb-4">
       <div class="col-lg-8">
-        <div class="p-4 bg-white rounded-4 border shadow-sm mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="p-3 p-sm-4 bg-white rounded-4 border shadow-sm mb-4">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
             <h4 class="font-serif text-plum fw-bold m-0">Active Plan Details</h4>
             <span class="badge ${user.subscription.status === 'Active' ? 'bg-success' : 'bg-warning'} px-3 py-2 rounded-pill">
               Status: ${user.subscription.status}
             </span>
           </div>
 
-          <div class="d-flex gap-4 align-items-center p-3 bg-ivory rounded-3 border mb-4">
-            <img src="${currentBox.image}" alt="${currentBox.title}" class="rounded-3" style="width: 90px; height: 90px; object-fit: cover;">
-            <div>
-              <h5 class="text-plum fw-bold mb-1">${user.subscription.planName}</h5>
+          <div class="d-flex flex-column flex-sm-row gap-3 align-items-start align-items-sm-center p-3 bg-ivory rounded-3 border mb-4">
+            <img src="${currentBox.image}" alt="${currentBox.title}" class="rounded-3 flex-shrink-0" style="width: 76px; height: 76px; object-fit: cover;">
+            <div class="w-100 overflow-hidden">
+              <h5 class="text-plum fw-bold mb-1 font-serif text-truncate">${user.subscription.planName}</h5>
               <p class="text-muted small mb-2">${currentBox.category} • Billed $${user.subscription.price.toFixed(2)}/mo</p>
-              <span class="badge bg-champagne text-white">Monthly Discovery Pass</span>
+              <span class="badge fw-bold px-2 py-1" style="background-color: #DFCA9B; color: #191118; font-size: 0.72rem;">Monthly Discovery Pass</span>
             </div>
           </div>
 
           <div class="row g-3 mb-4">
             <div class="col-sm-6">
-              <div class="p-3 border rounded-3">
+              <div class="p-3 border rounded-3 h-100">
                 <small class="text-muted d-block">Next Auto-Renewal Date</small>
                 <strong class="text-plum fs-6">${user.subscription.nextBillingDate}</strong>
               </div>
             </div>
             <div class="col-sm-6">
-              <div class="p-3 border rounded-3">
+              <div class="p-3 border rounded-3 h-100">
                 <small class="text-muted d-block">Default Payment Method</small>
                 <strong class="text-plum fs-6"><i class="fa-brands fa-cc-mastercard text-danger me-1"></i> Mastercard ending in 8824</strong>
               </div>
@@ -292,7 +292,7 @@ function renderSubscriptionTab(container, user, state) {
         </div>
 
         <!-- Switch Box Plan Option -->
-        <div class="p-4 bg-white rounded-4 border shadow-sm">
+        <div class="p-3 p-sm-4 bg-white rounded-4 border shadow-sm">
           <h4 class="font-serif text-plum fw-bold mb-3">Switch Your Discovery Curation</h4>
           <p class="text-muted small mb-3">Want to switch your beauty focus? Choose a new box curation for next month at no extra switching cost.</p>
           <div class="row g-3">
@@ -347,59 +347,59 @@ function renderUpcomingBoxTab(container, user, state) {
   const currentBox = state.boxes.find(b => b.id === user.subscription.boxId) || state.boxes[0];
 
   container.innerHTML = `
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 mb-4">
       <div>
-        <h2 class="font-serif text-plum fw-bold mb-1">Upcoming November Curation</h2>
+        <h2 class="font-serif text-plum fw-bold mb-1" style="word-break: break-word;">Upcoming November Curation</h2>
         <p class="text-muted m-0">Customize your hero luxury product before the packing window closes in <strong>4 days</strong>.</p>
       </div>
-      <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fs-6">
+      <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fs-6 flex-shrink-0">
         <i class="fa-solid fa-clock me-1"></i> Customization Closes Nov 4
       </span>
     </div>
 
     <!-- Timeline Tracker -->
-    <div class="p-4 bg-white rounded-4 border shadow-sm mb-4">
+    <div class="p-3 p-sm-4 bg-white rounded-4 border shadow-sm mb-4">
       <h5 class="font-serif text-plum fw-bold mb-3">Delivery Journey & Packing Status</h5>
       <div class="row text-center g-2 position-relative">
-        <div class="col-3">
-          <div class="p-2 rounded-3 bg-rose-soft border border-rose">
+        <div class="col-6 col-sm-3">
+          <div class="p-2 rounded-3 bg-rose-soft border border-rose h-100">
             <i class="fa-solid fa-wand-magic-sparkles text-plum fs-5 mb-1"></i>
-            <strong class="d-block small text-plum">Customizing</strong>
-            <small class="text-success fw-bold">Active Now</small>
+            <strong class="d-block small text-plum text-truncate">Customizing</strong>
+            <small class="text-success fw-bold d-block">Active Now</small>
           </div>
         </div>
-        <div class="col-3">
-          <div class="p-2 rounded-3 bg-light border">
+        <div class="col-6 col-sm-3">
+          <div class="p-2 rounded-3 bg-light border h-100">
             <i class="fa-solid fa-box text-muted fs-5 mb-1"></i>
-            <strong class="d-block small text-muted">Box Packing</strong>
-            <small class="text-muted">Nov 5</small>
+            <strong class="d-block small text-muted text-truncate">Box Packing</strong>
+            <small class="text-muted d-block">Nov 5</small>
           </div>
         </div>
-        <div class="col-3">
-          <div class="p-2 rounded-3 bg-light border">
+        <div class="col-6 col-sm-3">
+          <div class="p-2 rounded-3 bg-light border h-100">
             <i class="fa-solid fa-truck text-muted fs-5 mb-1"></i>
-            <strong class="d-block small text-muted">Dispatched</strong>
-            <small class="text-muted">Nov 7</small>
+            <strong class="d-block small text-muted text-truncate">Dispatched</strong>
+            <small class="text-muted d-block">Nov 7</small>
           </div>
         </div>
-        <div class="col-3">
-          <div class="p-2 rounded-3 bg-light border">
+        <div class="col-6 col-sm-3">
+          <div class="p-2 rounded-3 bg-light border h-100">
             <i class="fa-solid fa-house text-muted fs-5 mb-1"></i>
-            <strong class="d-block small text-muted">Delivered</strong>
-            <small class="text-muted">Nov 10</small>
+            <strong class="d-block small text-muted text-truncate">Delivered</strong>
+            <small class="text-muted d-block">Nov 10</small>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Hero Product Choice -->
-    <div class="p-4 bg-white rounded-4 border shadow-sm mb-4">
-      <div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="p-3 p-sm-4 bg-white rounded-4 border shadow-sm mb-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 mb-3">
         <div>
           <span class="section-tag mb-1"><i class="fa-solid fa-star"></i> Custom Choice</span>
-          <h4 class="font-serif text-plum fw-bold m-0">Select Your November Hero Product</h4>
+          <h4 class="font-serif text-plum fw-bold m-0" style="word-break: break-word;">Select Your November Hero Product</h4>
         </div>
-        <span class="badge bg-rose-soft text-plum">Currently Selected: ${user.subscription.selectedHeroChoice}</span>
+        <span class="badge bg-rose-soft text-plum text-wrap text-start text-md-end">Currently Selected: ${user.subscription.selectedHeroChoice}</span>
       </div>
       <p class="text-muted small mb-4">All subscribers receive the foundational 4 essentials, plus your selected choice below:</p>
 
@@ -558,7 +558,7 @@ function renderOrderHistoryTab(container, user, state) {
               <td class="text-muted small">${ord.date}</td>
               <td class="fw-semibold text-plum">${ord.box}</td>
               <td class="fw-bold text-plum">$${ord.amount.toFixed(2)}</td>
-              <td><span class="badge bg-success bg-opacity-15 text-success">${ord.status}</span></td>
+              <td><span class="badge bg-success text-white px-3 py-1 rounded-pill fw-bold" style="font-size: 0.78rem;"><i class="fa-solid fa-circle-check me-1"></i> ${ord.status}</span></td>
               <td>
                 <button class="btn btn-sm btn-glow-outline py-1 px-2" onclick="showGlowToast('Tracking Info', 'Carrier: FedEx Luxury Express # ${ord.tracking} - Successfully Delivered.', 'info')">
                   Track
@@ -835,4 +835,12 @@ function saveAccountSettings(e) {
   state.currentUser.shippingAddress.zip = form.accZip.value;
   saveGlowState(state);
   showGlowToast("Settings Updated", "Your contact & shipping details have been saved.", "success");
+}
+
+function handleDashboardLogout(e) {
+  if (e) e.preventDefault();
+  showGlowToast("Logged Out ✨", "You have been safely signed out. Redirecting to homepage...", "info");
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 400);
 }

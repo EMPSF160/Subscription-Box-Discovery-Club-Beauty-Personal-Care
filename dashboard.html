@@ -43,7 +43,10 @@
           </a>
           <div class="d-flex align-items-center gap-2 text-white pt-2 pt-xl-0 border-top border-xl-0 border-secondary border-opacity-25">
             <img src="image/stocksnap-face-2573217_1920.jpg" alt="Sophia Montgomery" class="rounded-circle border border-warning" style="width: 38px; height: 38px; object-fit: cover;">
-            <span class="small fw-semibold">Sophia M. (VIP)</span>
+            <div class="d-flex flex-column">
+              <span class="small fw-bold text-white">Sophia Montgomery</span>
+              <span class="badge fw-bold" style="background-color: #DFCA9B; color: #191118; font-size: 0.68rem; width: fit-content;">VIP Member</span>
+            </div>
           </div>
         </div>
       </div>
@@ -60,7 +63,7 @@
         <img src="image/stocksnap-face-2573217_1920.jpg" alt="Sophia" class="sidebar-avatar">
         <div class="overflow-hidden">
           <strong class="d-block text-white text-truncate" style="font-size: 0.95rem;">Sophia Montgomery</strong>
-          <span class="badge bg-rose text-plum fw-bold" style="font-size: 0.7rem;">VIP Discovery Member</span>
+          <span class="badge fw-bold" style="background-color: #DFCA9B; color: #191118; font-size: 0.7rem;">VIP Discovery Member</span>
         </div>
       </div>
 
@@ -118,7 +121,7 @@
           </a>
         </li>
         <li class="mt-auto pt-3 border-top border-secondary border-opacity-25">
-          <a href="login.html" class="sidebar-nav-link text-danger">
+          <a href="index.html" class="sidebar-nav-link text-danger" onclick="handleDashboardLogout(event)">
             <i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
           </a>
         </li>

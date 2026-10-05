@@ -245,6 +245,26 @@ const GLOW_DATA = {
       date: "August 2026",
       image: "image/Beauty Lifestyle Personalization4.jpg",
       excerpt: "Can a plant-derived Ayurvedic babchi seed extract truly deliver 0.5% retinol results without redness or UV sensitivity?"
+    },
+    {
+      id: "art-5",
+      title: "Clean Lip Glazes & Velvet Pigments: Autumn 2026 Trend Report",
+      category: "Haute Makeup",
+      readTime: "4 min read",
+      author: "Camille Laurent, Editorial Director",
+      date: "August 2026",
+      image: "image/engin_akyurt-make-up-4541782_1920.jpg",
+      excerpt: "Discover nourishing plant oils, crushed mineral pigments, and ultra-hydrating hyaluronic glosses replacing matte formulas."
+    },
+    {
+      id: "art-6",
+      title: "Inside French Artisanal Perfumery: Notes of Damask Rose & Golden Amber",
+      category: "Niche Fragrance",
+      readTime: "5 min read",
+      author: "Grasse Master Perfumer",
+      date: "July 2026",
+      image: "image/kaboompics-perfume-791698_1920.jpg",
+      excerpt: "An intimate exploration of sustainable extraction in Provence and how olfactory memory enhances your daily evening wind-down."
     }
   ],
 
@@ -336,7 +356,12 @@ initGlowStorage();
 
 function getGlowState() {
   try {
-    return JSON.parse(localStorage.getItem("GLOWBOX_STATE")) || GLOW_DATA;
+    const parsed = JSON.parse(localStorage.getItem("GLOWBOX_STATE")) || GLOW_DATA;
+    if (!parsed.journalArticles || parsed.journalArticles.length < GLOW_DATA.journalArticles.length) {
+      parsed.journalArticles = GLOW_DATA.journalArticles;
+      saveGlowState(parsed);
+    }
+    return parsed;
   } catch (e) {
     return GLOW_DATA;
   }

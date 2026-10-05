@@ -19,11 +19,14 @@
 </head>
 <body class="bg-ivory d-flex flex-column min-vh-100 justify-content-center align-items-center p-3 p-md-4">
 
-  <!-- Back to Home Top Quick Navigation -->
-  <div class="w-100 text-center mb-3" style="max-width: 900px;">
+  <!-- Back to Home Top Quick Navigation & Theme Toggle -->
+  <div class="w-100 d-flex justify-content-between align-items-center mb-3 px-2" style="max-width: 920px;">
     <a href="index.html" class="btn btn-sm btn-glow-outline px-3 rounded-pill">
       <i class="fa-solid fa-arrow-left me-1"></i> Back to Home
     </a>
+    <button type="button" class="btn btn-theme-toggle rounded-circle" onclick="toggleGlowTheme(event)" title="Toggle Dark / Light Theme" aria-label="Toggle Theme">
+      <i class="fa-solid fa-moon theme-icon-indicator"></i>
+    </button>
   </div>
 
   <!-- Login Card Layout -->
@@ -73,11 +76,16 @@
                 <input type="email" id="loginEmail" class="form-control" required value="sophia.m@example.com">
               </div>
               <div class="mb-3">
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center mb-1">
                   <label class="form-label small fw-bold mb-0">Password</label>
                   <a href="#forgotPasswordModal" data-bs-toggle="modal" class="small text-muted text-decoration-underline">Forgot Password?</a>
                 </div>
-                <input type="password" id="loginPass" class="form-control" required value="••••••••••••">
+                <div class="position-relative">
+                  <input type="password" id="loginPass" class="form-control pe-5" required value="password123">
+                  <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y text-muted text-decoration-none pe-3 border-0 bg-transparent shadow-none" onclick="togglePasswordVisibility('loginPass', this)" aria-label="Toggle password visibility">
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
               </div>
               <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="rememberMe" checked>
@@ -87,6 +95,24 @@
               <button type="submit" class="btn btn-glow-plum btn-lg w-100 mb-3">
                 <i class="fa-solid fa-arrow-right-to-bracket me-2"></i> Sign In to Account
               </button>
+
+              <div class="d-flex align-items-center my-3">
+                <hr class="flex-grow-1 my-0 border-secondary border-opacity-25">
+                <span class="px-3 small text-muted text-uppercase" style="font-size: 0.72rem; letter-spacing: 0.08em;">Or sign in with</span>
+                <hr class="flex-grow-1 my-0 border-secondary border-opacity-25">
+              </div>
+
+              <div class="d-flex gap-2 mb-2">
+                <button type="button" class="btn btn-outline-secondary flex-grow-1 d-flex align-items-center justify-content-center gap-2 py-2" onclick="showGlowToast('Social Sign In', 'Connecting securely with Google...', 'info')">
+                  <i class="fa-brands fa-google text-danger"></i> <span class="small fw-semibold">Google</span>
+                </button>
+                <button type="button" class="btn btn-outline-secondary flex-grow-1 d-flex align-items-center justify-content-center gap-2 py-2" onclick="showGlowToast('Social Sign In', 'Connecting securely with Apple ID...', 'info')">
+                  <i class="fa-brands fa-apple text-dark"></i> <span class="small fw-semibold">Apple</span>
+                </button>
+                <button type="button" class="btn btn-outline-secondary flex-grow-1 d-flex align-items-center justify-content-center gap-2 py-2" onclick="showGlowToast('Social Sign In', 'Connecting securely with Facebook...', 'info')">
+                  <i class="fa-brands fa-facebook-f text-primary"></i> <span class="small fw-semibold">Facebook</span>
+                </button>
+              </div>
             </form>
           </div>
 
@@ -143,6 +169,25 @@
 
   <script>
     let currentDemoMode = 'customer';
+
+    function togglePasswordVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      if (!input) return;
+      const icon = btn.querySelector("i");
+      if (input.type === "password") {
+        input.type = "text";
+        if (icon) {
+          icon.classList.remove("fa-eye");
+          icon.classList.add("fa-eye-slash");
+        }
+      } else {
+        input.type = "password";
+        if (icon) {
+          icon.classList.remove("fa-eye-slash");
+          icon.classList.add("fa-eye");
+        }
+      }
+    }
 
     function quickFillLogin(mode) {
       currentDemoMode = mode;

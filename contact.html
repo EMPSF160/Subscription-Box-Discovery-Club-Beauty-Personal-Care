@@ -78,12 +78,12 @@
           <div class="col-lg-5">
             <span class="section-tag dark mb-2"><i class="fa-solid fa-truck-fast"></i> Instant Tracker</span>
             <h3 class="font-serif text-white fw-bold mb-2">Track Your Upcoming Box</h3>
-            <p class="small opacity-80 m-0">Enter your GLOWBOX tracking or Order ID (e.g. GLOW-US-9847291) to view carrier status.</p>
+            <p class="small text-white opacity-90 m-0">Enter your GLOWBOX tracking or Order ID (e.g. GLOW-US-9847291) to view carrier status.</p>
           </div>
           <div class="col-lg-7">
-            <div class="input-group input-group-lg">
-              <input type="text" id="trackInput" class="form-control" placeholder="Enter Order ID or Email..." value="GLOW-US-9847291">
-              <button class="btn btn-glow-champagne px-4" onclick="simulateBoxTrack()">
+            <div class="d-flex flex-column flex-sm-row gap-2">
+              <input type="text" id="trackInput" class="form-control form-control-lg flex-grow-1" placeholder="Enter Order ID or Email..." value="GLOW-US-9847291">
+              <button class="btn btn-glow-champagne btn-lg px-4 text-nowrap" onclick="simulateBoxTrack()">
                 <i class="fa-solid fa-location-dot me-1"></i> Track Box
               </button>
             </div>
@@ -206,11 +206,11 @@
               <h3 class="font-serif text-plum fw-bold m-0">GLOWBOX San Francisco Flagship Atelier</h3>
               <p class="text-muted small m-0 mt-1">450 Sutter Street, Suite 1200, San Francisco, California</p>
             </div>
-            <div class="d-flex gap-2">
-              <a href="https://maps.google.com/?q=450+Sutter+St+San+Francisco+CA" target="_blank" class="btn btn-sm btn-glow-outline">
+            <div class="d-flex flex-column flex-sm-row gap-2 w-100 w-md-auto">
+              <a href="https://maps.google.com/?q=450+Sutter+St+San+Francisco+CA" target="_blank" class="btn btn-sm btn-glow-outline text-nowrap w-100 w-sm-auto text-center justify-content-center">
                 <i class="fa-solid fa-diamond-turn-right me-1"></i> Get Directions
               </a>
-              <button class="btn btn-sm btn-glow-plum" onclick="showGlowToast('Concierge Booking', 'Atelier skincare consultation booked.', 'success')">
+              <button class="btn btn-sm btn-glow-plum text-nowrap w-100 w-sm-auto text-center justify-content-center" onclick="showGlowToast('Concierge Booking', 'Atelier skincare consultation booked.', 'success')">
                 Book Skin Consultation
               </button>
             </div>
